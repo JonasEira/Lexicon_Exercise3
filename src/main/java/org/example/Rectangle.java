@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Rectangle {
     private double height;
     private double width;
@@ -32,4 +34,13 @@ public class Rectangle {
         return height*width;
     }
 
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter Width of rectangle:");
+        double width = s.nextDouble();
+        System.out.println("Enter Height of rectangle:");
+        double height = s.nextDouble();
+        Rectangle rect = new Rectangle(width, height);
+        System.out.println("The area is: " + rect.getArea());
+    }
 }

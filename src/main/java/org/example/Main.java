@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -8,13 +9,22 @@ public class Main {
         System.out.println(myCar.drive());
 
 
-        Scanner s = new Scanner(System.in);
-        System.out.println("Enter Width of rectangle:");
-        double width = s.nextDouble();
-        System.out.println("Enter Height of rectangle:");
-        double height = s.nextDouble();
-        Rectangle rect = new Rectangle(width, height);
-        System.out.println("The area is: " + rect.getArea());3
+        ArrayList<Author> authors = new ArrayList<>();
+        authors.add(new Author("Arthur"));
+        authors.get(0).addBook("Arthurs Funny book");
+        authors.get(0).addBook("Arthurs Happy book");
+        authors.get(0).addBook("Arthurs Tricky book");
+        authors.get(0).addBook("Arthurs Horror book");
+
+        authors.add(new Author("Benjamin"));
+        authors.get(0).addBook("Benjamins Funny book");
+        authors.get(0).addBook("Benjamins Happy book");
+        authors.get(0).addBook("Benjamins Tricky book");
+        authors.get(0).addBook("Benjamins Horror book");
+
+        System.out.println(authors.get(0).getBooksString());
+        System.out.println(authors.get(1).getBooksString());
+
     }
 
 
