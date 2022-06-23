@@ -21,8 +21,15 @@ public class Main {
             authors.getAuthor("Benjamin").addBook("Benjamins Tricky book");
             authors.getAuthor("Benjamin").addBook("Benjamins Horror book");
 
+            authors.appendAuthor(new Author("Karen"));
+            authors.getAuthor("Benjamin").addBook("Karens Funny book");
+            authors.getAuthor("Benjamin").addBook("Karens Happy book");
+            authors.getAuthor("Benjamin").addBook("Karens Tricky book");
+            authors.getAuthor("Benjamin").addBook("Karens Horror book");
+
             System.out.println(authors.getAuthor("Arthur").getBooksString());
             System.out.println(authors.getAuthor("Benjamin").getBooksString());
+            System.out.println(authors.getAuthor("Karen").getBooksString());
 
         } catch (Author.AuthorException e) {
             throw new RuntimeException(e);

@@ -35,7 +35,7 @@ public class Author {
     }
 
     public void appendAuthor(Author auth){
-        this._nextAuthor = auth;
+        this.getLastAuthor()._nextAuthor = auth;
     }
 
     public String getAuthorName() {
@@ -51,6 +51,14 @@ public class Author {
             }
         } else {
             return this;
+        }
+    }
+
+    private Author getLastAuthor(){
+        if(_nextAuthor == null){
+            return this;
+        } else {
+            return this._nextAuthor;
         }
     }
 
