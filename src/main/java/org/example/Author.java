@@ -19,7 +19,7 @@ public class Author {
     public String getBooksString(){
         String tmp = "";
         for(Book b : books){
-            tmp += b.get_name() + "\n";
+            tmp += b.getBookName() + "\n";
         }
         return tmp;
     }
@@ -29,6 +29,12 @@ public class Author {
     }
 
     public void addBook(String s){
-        this.books.add(new Book(s));
+        Book b = new Book(s);
+        b.setAuthor(this);
+        this.books.add(b);
+    }
+
+    public String getAuthorName() {
+        return this._name;
     }
 }

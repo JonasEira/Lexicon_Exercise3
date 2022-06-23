@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,13 +16,15 @@ public class Main {
         authors.get(0).addBook("Arthurs Horror book");
 
         authors.add(new Author("Benjamin"));
-        authors.get(0).addBook("Benjamins Funny book");
-        authors.get(0).addBook("Benjamins Happy book");
-        authors.get(0).addBook("Benjamins Tricky book");
-        authors.get(0).addBook("Benjamins Horror book");
+        authors.get(1).addBook("Benjamins Funny book");
+        authors.get(1).addBook("Benjamins Happy book");
+        authors.get(1).addBook("Benjamins Tricky book");
+        authors.get(1).addBook("Benjamins Horror book");
 
         System.out.println(authors.get(0).getBooksString());
+        System.out.println();
         System.out.println(authors.get(1).getBooksString());
+        System.out.println(authors.get(1).getBooks().get(0).getAuthorObject().getAuthorName());
 
     }
 
