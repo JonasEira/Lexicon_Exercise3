@@ -8,24 +8,25 @@ public class Main {
         System.out.println(myCar.drive());
 
 
-        ArrayList<Author> authors = new ArrayList<>();
-        authors.add(new Author("Arthur"));
-        authors.get(0).addBook("Arthurs Funny book");
-        authors.get(0).addBook("Arthurs Happy book");
-        authors.get(0).addBook("Arthurs Tricky book");
-        authors.get(0).addBook("Arthurs Horror book");
+        try {
+            Author authors = new Author("Arthur");
+            authors.addBook("Arthurs Funny book");
+            authors.addBook("Arthurs Happy book");
+            authors.addBook("Arthurs Tricky book");
+            authors.addBook("Arthurs Horror book");
 
-        authors.add(new Author("Benjamin"));
-        authors.get(1).addBook("Benjamins Funny book");
-        authors.get(1).addBook("Benjamins Happy book");
-        authors.get(1).addBook("Benjamins Tricky book");
-        authors.get(1).addBook("Benjamins Horror book");
+            authors.appendAuthor(new Author("Benjamin"));
+            authors.getAuthor("Benjamin").addBook("Benjamins Funny book");
+            authors.getAuthor("Benjamin").addBook("Benjamins Happy book");
+            authors.getAuthor("Benjamin").addBook("Benjamins Tricky book");
+            authors.getAuthor("Benjamin").addBook("Benjamins Horror book");
 
-        System.out.println(authors.get(0).getBooksString());
-        System.out.println();
-        System.out.println(authors.get(1).getBooksString());
-        System.out.println(authors.get(1).getBooks().get(0).getAuthorObject().getAuthorName());
+            System.out.println(authors.getAuthor("Arthur").getBooksString());
+            System.out.println(authors.getAuthor("Benjamin").getBooksString());
 
+        } catch (Author.AuthorException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

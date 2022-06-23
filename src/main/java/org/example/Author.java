@@ -6,7 +6,7 @@ public class Author {
 
     private String _name;
     private ArrayList<Book> books;
-
+    private Author _nextAuthor;
     public Author(String s) {
         _name = s;
         this.books = new ArrayList<Book>();
@@ -34,7 +34,29 @@ public class Author {
         this.books.add(b);
     }
 
+    public void appendAuthor(Author auth){
+        this._nextAuthor = auth;
+    }
+
     public String getAuthorName() {
         return this._name;
+    }
+
+    public Author getAuthor(String name) throws AuthorException{
+        if(this._name != name){
+            if(_nextAuthor != null){
+                return this._nextAuthor.getAuthor(name);
+            } else {
+                throw new AuthorException("Author not found");
+            }
+        } else {
+            return this;
+        }
+    }
+
+    public class AuthorException extends Exception {
+        public AuthorException(String author_not_found) {
+            super(author_not_found);
+        }
     }
 }
